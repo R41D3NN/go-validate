@@ -2,7 +2,7 @@ package validate
 
 import "fmt"
 
-// NumberValidator if there is no validation present.
+// NumberValidator to validate numbers fall within a range.
 type NumberValidator struct {
 	Min uint
 	Max uint
