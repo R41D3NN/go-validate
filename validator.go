@@ -26,6 +26,9 @@ func NewDataValidator(tag string) DataValidator {
 		validator := StringValidator{}
 		fmt.Sscanf(strings.Join(args[1:], ","), "min=%d,max=%d", &validator.Min, &validator.Max)
 		return validator
+
+	case "email":
+		return EmailValidator{}
 	}
 
 	return DefaultValidator{}
