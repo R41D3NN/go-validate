@@ -29,6 +29,12 @@ func NewDataValidator(tag string) DataValidator {
 
 	case "email":
 		return EmailValidator{}
+
+	case "uuid":
+		return UUIDValidator{}
+
+	case "guid":
+		return UUIDValidator{}
 	}
 
 	return DefaultValidator{}
