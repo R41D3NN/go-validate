@@ -17,6 +17,10 @@ type DataValidator interface {
 func NewDataValidator(tag string) DataValidator {
 	args := strings.Split(tag, ",")
 	switch args[0] {
+	case "number":
+		validator := NumberValidator{}
+		fmt.Sscanf(strings.Join(args[1:], ","), "min=%d,max=%d", &validator.Min, &validator.Max)
+		return validator
 	}
 
 	return DefaultValidator{}
